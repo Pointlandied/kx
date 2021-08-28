@@ -1374,8 +1374,8 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = TRM_Semyonovtsy_Issue
-		icon = GFX_TRM_Semyonovtsy_Issue
+		id = TRM_Crush_NRA
+		icon = GFX_TRM_Crush_NRA
 		available = {
 			NOT = { has_country_flag = Aleksandr_Kolchak_dead }
 			has_government = paternal_autocrat
@@ -1385,91 +1385,6 @@ focus_tree = {
 		y = 1
 		prerequisite = {
 			focus = TRM_Kolchak_Doc
-		}
-		cost = 1.2
-		ai_will_do = {
-			base = 60
-		}
-		cancel_if_invalid = yes
-		completion_reward = {
-			country_event = tramsem.1
-		}
-	}
-	focus = {
-		id = TRM_Limit_Cossack_Autonomy
-		icon = GFX_TRM_Limit_Cossack_Autonomy
-		available = {
-			NOT = { has_country_flag = Aleksandr_Kolchak_dead }
-			has_government = paternal_autocrat
-			NOT = { has_idea = TRM_Grigoriy_M_Semyenov_hog_pau }
-		}
-		relative_position_id = TRM_Kolchak_Doc
-		x = -1
-		y = 2
-		prerequisite = {
-			focus = TRM_Semyonovtsy_Issue
-		}
-		mutually_exclusive = {
-			focus = TRM_Expand_Cossack_Rights
-		}
-		cost = 4
-		ai_will_do = {
-			base = 60
-		}
-		cancel_if_invalid = yes
-		completion_reward = {
-			custom_effect_tooltip = TRM_Limit_Cossack_Autonomy_tt
-			TRM_decrease_cossack_loyalty = yes
-			TRM_increase_rovs_loyalty = yes
-		}
-	}
-	focus = {
-		id = TRM_Expand_Cossack_Rights
-		icon = GFX_TRM_Expand_Cossack_Rights
-		available = {
-			NOT = { has_country_flag = Aleksandr_Kolchak_dead }
-			has_government = paternal_autocrat
-		}
-		relative_position_id = TRM_Kolchak_Doc
-		x = 1
-		y = 2
-		prerequisite = {
-			focus = TRM_Semyonovtsy_Issue
-		}
-		mutually_exclusive = {
-			focus = TRM_Limit_Cossack_Autonomy
-		}
-		cost = 4
-		ai_will_do = {
-			base = 60
-			modifier = {
-				factor = 100
-				has_game_rule = {
-					rule = TRM_path
-					option = RULE_OPTION_TRM_KOLCHAK_SECURES_POWER
-				}
-			}
-		}
-		cancel_if_invalid = yes
-		completion_reward = {
-			custom_effect_tooltip = TRM_Expand_Cossack_Rights_tt
-			TRM_increase_cossack_loyalty = yes
-			TRM_decrease_rovs_loyalty = yes
-		}
-	}
-	focus = {
-		id = TRM_Crush_NRA
-		icon = GFX_TRM_Crush_NRA
-		available = {
-			NOT = { has_country_flag = Aleksandr_Kolchak_dead }
-			has_government = paternal_autocrat
-		}
-		relative_position_id = TRM_Kolchak_Doc
-		x = 0
-		y = 3
-		prerequisite = {
-			focus = TRM_Limit_Cossack_Autonomy
-			focus = TRM_Expand_Cossack_Rights
 		}
 		select_effect = {
 			hidden_effect = {
@@ -1500,7 +1415,7 @@ focus_tree = {
 		}
 		relative_position_id = TRM_Kolchak_Doc
 		x = -1
-		y = 4
+		y = 2
 		prerequisite = {
 			focus = TRM_Crush_NRA
 		}
@@ -1582,7 +1497,7 @@ focus_tree = {
 		}
 		relative_position_id = TRM_Kolchak_Doc
 		x = 1
-		y = 4
+		y = 2
 		prerequisite = {
 			focus = TRM_Crush_NRA
 		}
@@ -1630,6 +1545,91 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = TRM_Semyonovtsy_Issue
+		icon = GFX_TRM_Semyonovtsy_Issue
+		available = {
+			NOT = { has_country_flag = Aleksandr_Kolchak_dead }
+			has_government = paternal_autocrat
+		}
+		relative_position_id = TRM_Kolchak_Doc
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = TRM_Austerity_Measures
+			focus = TRM_Appease_The_Workers
+		}
+		cost = 1.2
+		ai_will_do = {
+			base = 60
+		}
+		cancel_if_invalid = yes
+		completion_reward = {
+			country_event = tramsem.4
+		}
+	}
+	focus = {
+		id = TRM_Limit_Cossack_Autonomy
+		icon = GFX_TRM_Limit_Cossack_Autonomy
+		available = {
+			NOT = { has_country_flag = Aleksandr_Kolchak_dead }
+			has_government = paternal_autocrat
+			NOT = { has_idea = TRM_Grigoriy_M_Semyenov_hog_pau }
+		}
+		relative_position_id = TRM_Kolchak_Doc
+		x = -1
+		y = 4
+		prerequisite = {
+			focus = TRM_Semyonovtsy_Issue
+		}
+		mutually_exclusive = {
+			focus = TRM_Expand_Cossack_Rights
+		}
+		cost = 4
+		ai_will_do = {
+			base = 60
+		}
+		cancel_if_invalid = yes
+		completion_reward = {
+			custom_effect_tooltip = TRM_Limit_Cossack_Autonomy_tt
+			TRM_decrease_cossack_loyalty = yes
+			TRM_increase_rovs_loyalty = yes
+		}
+	}
+	focus = {
+		id = TRM_Expand_Cossack_Rights
+		icon = GFX_TRM_Expand_Cossack_Rights
+		available = {
+			NOT = { has_country_flag = Aleksandr_Kolchak_dead }
+			has_government = paternal_autocrat
+		}
+		relative_position_id = TRM_Kolchak_Doc
+		x = 1
+		y = 4
+		prerequisite = {
+			focus = TRM_Semyonovtsy_Issue
+		}
+		mutually_exclusive = {
+			focus = TRM_Limit_Cossack_Autonomy
+		}
+		cost = 4
+		ai_will_do = {
+			base = 60
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = TRM_path
+					option = RULE_OPTION_TRM_KOLCHAK_SECURES_POWER
+				}
+			}
+		}
+		cancel_if_invalid = yes
+		completion_reward = {
+			custom_effect_tooltip = TRM_Expand_Cossack_Rights_tt
+			TRM_increase_cossack_loyalty = yes
+			TRM_decrease_rovs_loyalty = yes
+		}
+	}
+	focus = {
 		id = TRM_Ensure_Czech_Legion_Loyalty
 		icon = GFX_TRM_Czechs_Loyalty
 		available = {
@@ -1640,8 +1640,8 @@ focus_tree = {
 		x = 0
 		y = 5
 		prerequisite = {
-			focus = TRM_Appease_The_Workers
-			focus = TRM_Austerity_Measures
+			focus = TRM_Limit_Cossack_Autonomy
+			focus = TRM_Expand_Cossack_Rights
 		}
 		cost = 2.8
 		ai_will_do = {
@@ -4584,6 +4584,19 @@ focus = {
 		available = {
 			has_country_flag = TRM_Semyonov_Coup
 		}
+		bypass = {
+			OR = {
+				AND = {
+					is_guaranteed_by = MON
+					has_guaranteed = MON
+				}
+				AND = {
+					has_military_access_to = MON
+					gives_military_access_to = MON
+				}
+				has_non_aggression_pact_with = MON
+			}
+		}
 		ai_will_do = {
 			base = 60
 		}
@@ -4648,6 +4661,7 @@ focus = {
 				ideology = radical_socialist
 				popularity = -0.1
 			}
+			set_country_flag = TRM_NRA_crushed
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
@@ -4711,6 +4725,7 @@ focus = {
 		}
 		completion_reward = {
 			add_ideas = trm_transbaikal_cossacks
+			add_ideas = DON_Cossack_state
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -4727,60 +4742,21 @@ focus = {
 		available = {
 			has_country_flag = TRM_Semyonov_Coup
 		}
+		bypass = {
+			BRY = { has_completed_focus = BRY_Buryat_Mongol_Cavalry }
+		}
 		ai_will_do = {
 			base = 60
 		}
 		completion_reward = {
-			custom_effect_tooltip = buryat_mongol_divisions
 			add_tech_bonus = {
 				name = TRM_Buryat_Mongol_Cavalry
 				bonus = 1
 				uses = 1
 				category = land_doctrine
 			}
-			division_template = {
-				name = "Buryat-Mongolskaya Diviziya"
-				division_names_group = TRM_CAV_01
-				regiments = {
-					cavalry = { x = 0 y = 0 }
-					cavalry = { x = 0 y = 1 }
-					cavalry = { x = 0 y = 2 }
-					cavalry = { x = 1 y = 0 }
-					cavalry = { x = 1 y = 1 }
-					cavalry = { x = 1 y = 2 }
-				}
-				support = {
-					engineer = { x = 0 y = 0 }
-				}
-			}
-			random_owned_controlled_state = {
-				prioritize = { 564 }
-				create_unit = {
-					division = "division_template = \"Buryat-Mongolskaya Diviziya\" start_experience_factor = 0.1"
-					owner = TRM
-					prioritize_location = 7816
-				}
-				create_unit = {
-					division = "division_template = \"Buryat-Mongolskaya Diviziya\" start_experience_factor = 0.1"
-					owner = TRM
-					prioritize_location = 7816
-				}
-				create_unit = {
-					division = "division_template = \"Buryat-Mongolskaya Diviziya\" start_experience_factor = 0.1"
-					owner = TRM
-					prioritize_location = 7816
-				}
-				create_unit = {
-					division = "division_template = \"Buryat-Mongolskaya Diviziya\" start_experience_factor = 0.1"
-					owner = TRM
-					prioritize_location = 7816
-				}
-				create_unit = {
-					division = "division_template = \"Buryat-Mongolskaya Diviziya\" start_experience_factor = 0.1"
-					owner = TRM
-					prioritize_location = 7816
-				}
-			}
+			custom_effect_tooltip = BRY_Buryat_Mongol_Cavalry_tt
+			hidden_effect = { load_oob = "BRY_CAV" }
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
@@ -4812,6 +4788,7 @@ focus = {
 					id = tramsem.8
 					days = 1
 			}
+			remove_ideas = TRM_dream
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -4835,10 +4812,14 @@ focus = {
 			focus = TRM_Transbaikal_Union
 		}
 		ai_will_do = {
-			base = 60
+			base = 70
 			modifier = {
-				factor = 100
+				factor = 1.5
 				TRM = { is_subject_of = JAP }
+			}
+			modifier = {
+				factor = 1.5
+				country_exists = SOV
 			}
 		}
 		completion_reward = {

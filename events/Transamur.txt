@@ -1986,6 +1986,7 @@ country_event = {
 		name = tram.80.e
 		trigger = {
 			check_variable = { CossackOrientation < -0.99 }
+			has_unit_leader = 243910
 		}
 		ai_chance = {
 			factor = 10
@@ -7527,6 +7528,21 @@ country_event = { #NRA wins
 			planning_skill = 2
 			logistics_skill = 1
 		}
+		create_corps_commander = {
+			name = "Genrikh Eikhe"
+			portrait_path = "gfx/leaders/TRM/TRM_Genrikh_Eikhe.png"
+			id = 505049
+			traits = {
+				politically_connected
+				infantry_leader
+				trait_engineer
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
 			
 		hidden_effect = {
 			RUS = {
@@ -8327,10 +8343,25 @@ country_event = { #NRA wins
 				politically_connected
 				trickster
 			}
-			skill = 2
+			skill = 3
 			attack_skill = 3
 			defense_skill = 1
 			planning_skill = 2
+			logistics_skill = 1
+		}
+		create_corps_commander = {
+			name = "Genrikh Eikhe"
+			portrait_path = "gfx/leaders/TRM/TRM_Genrikh_Eikhe.png"
+			id = 505049
+			traits = {
+				politically_connected
+				infantry_leader
+				trait_engineer
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
 			logistics_skill = 1
 		}
 		hidden_effect = {
@@ -8770,6 +8801,7 @@ country_event = { #Semyenov
 				}
 			}
 		}
+		custom_effect_tooltip = TRM_transbaikal_tooltip
 		hidden_effect = {
 			country_event = {
 				id = tramsem.3
@@ -8812,12 +8844,21 @@ country_event = { #Japanese answer
 
 	option = {
 		name = tramsem.2.a
-		add_political_power = -100
-		TRM_decrease_Kolchak_Authority_Amur = yes
+		custom_effect_tooltip = TRM_transbaikal_tooltip
+		hidden_effect = {
+			country_event = {
+				id = tramsem.3
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = tramsem.2.b
+		TRM_decrease_Kolchak_Authority_Buryatia = yes
 		TRM_decrease_Kolchak_Authority_Chita = yes
 	}
 }
-country_event = { #Semyenov demands
+country_event = { #Transbaikal Cossack Host
 	id = tramsem.3
 	title = tramsem.3.t
 	desc = tramsem.3.d
@@ -8826,15 +8867,57 @@ country_event = { #Semyenov demands
 
 	option = {
 		name = tramsem.3.a
-		ai_chance = {
-			factor = 40
-			modifier = {
-			factor = 10000
-				has_game_rule = {
-					rule = TRM_path 
-					option = RULE_OPTION_TRM_SEMYONOV
-				}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.07
+		}
+		custom_effect_tooltip = TRM_this_will_greatly_anger_oblastniki
+		effect_tooltip = {
+			563 = { 
+				custom_effect_tooltip = TRM_Decrease_Kolchak_Support
+				custom_effect_tooltip = TRM_Increase_Semyonov_Support_Greatly
+				custom_effect_tooltip = TRM_Decrease_Oblastniki_Support_Greatly
 			}
+			every_owned_state = { 
+				limit = {
+					NOT = {
+						state = 408
+					}
+				}
+				custom_effect_tooltip = TRM_Increase_Oblastniki_Support_Slightly
+			}
+		}
+		TRM_decrease_Kolchak_Authority_Amur = yes
+		hidden_effect = {
+			add_to_variable = { Chita_Oblastniki_Authority = -0.07 }
+			add_to_variable = { Chita_Cossack_Authority = 0.12 }
+			add_to_variable = { Chita_Kolchak_Authority = -0.05 }
+			add_to_variable = { Buryatia_Oblastniki_Authority = 0.01 }
+			add_to_variable = { Buryatia_Kolchak_Authority = -0.01 }
+			add_to_variable = { Yakutia_Oblastniki_Authority = 0.01 }
+			add_to_variable = { Yakutia_Kolchak_Authority = -0.01 }
+			add_to_variable = { Bodaybo_Oblastniki_Authority = 0.01 }
+			add_to_variable = { Bodaybo_Kolchak_Authority = -0.01 }
+			add_to_variable = { Blagoveschensk_Oblastniki_Authority = 0.01 }
+			add_to_variable = { Blagoveschensk_Kolchak_Authority = -0.01 }
+			add_to_variable = { Magadan_Oblastniki_Authority = 0.01 }
+			add_to_variable = { Magadan_Kolchak_Authority = -0.01 }
+			add_to_variable = { Nikolayevsk_Oblastniki_Authority = 0.01 }
+			add_to_variable = { Nikolayevsk_Kolchak_Authority = -0.01 }
+			add_to_variable = { Kamchatka_Oblastniki_Authority = 0.01 }
+			add_to_variable = { Kamchatka_Kolchak_Authority = -0.01 }
+			add_to_variable = { Khabarovsk_Oblastniki_Authority = 0.01 }
+			add_to_variable = { Khabarovsk_Kolchak_Authority = -0.01 }
+		}
+		TRM_recalculate_oblastniki_effects = yes
+		TRM_clamp_spheres_of_influence = yes
+		TRM_recalculate_kolchak_variables = yes
+		TRM_setup_transbaikal = yes
+	}
+	option = {
+		name = tramsem.3.b
+		trigger = {
+			is_ai = no
 		}
 		add_popularity = {
 			ideology = social_liberal
@@ -8881,32 +8964,26 @@ country_event = { #Semyenov demands
 		TRM_recalculate_oblastniki_effects = yes
 		TRM_clamp_spheres_of_influence = yes
 		TRM_recalculate_kolchak_variables = yes
+		TRM_setup_transbaikal = yes
+		BRY = { change_tag_from = ROOT }
 	}
+}
+country_event = { #Transbaikal Turmoil
+	id = tramsem.4
+	title = tramsem.4.t
+	desc = tramsem.4.d
+
+	is_triggered_only = yes
+
 	option = {
-		name = tramsem.3.b
-		ai_chance = {
-			factor = 60
-			modifier = {
-			factor = 10000
-				has_game_rule = {
-					rule = TRM_path 
-					option = RULE_OPTION_TRM_MORYAKI_IN_POWER
-				}
-			}
+		name = tramsem.4.a
+		add_stability = -0.1
+		TRM_decrease_Kolchak_Authority_Buryatia = yes
+		TRM_decrease_Kolchak_Authority_Chita = yes
+		country_event = {
+			id = tramsem.1
+			days = 5
 		}
-		add_stability = 0.05
-		effect_tooltip = {
-			563 = { 
-				custom_effect_tooltip = TRM_Decrease_Kolchak_Support
-				custom_effect_tooltip = TRM_Increase_Semyonov_Support_Greatly
-			}
-		}
-		hidden_effect = {
-			add_to_variable = { Chita_Cossack_Authority = 0.07 }
-			add_to_variable = { Chita_Kolchak_Authority = -0.07 }
-		}
-		TRM_clamp_spheres_of_influence = yes
-		TRM_recalculate_kolchak_variables = yes
 	}
 }
 
@@ -9004,20 +9081,22 @@ country_event = { #Mongolia accepts
 		add_political_power = 50
 		add_opinion_modifier = {
 			target = MON
-			modifier = KR_close_allies  
+			modifier = KR_close_allies 
+		}	
+		reverse_add_opinion_modifier = {
+			target = MON
+			modifier = KR_close_allies 
+		}	
+		give_guarantee = MON
+		MON = { give_guarantee = TRM }
+		diplomatic_relation = {
+			country = MON
+			relation = non_aggression_pact
+			active = yes
 		}
-		TRM = { give_military_access = MON }
-		diplomatic_relation = { country = MON relation = non_aggression_pact }
+		give_military_access = MON
+		MON = { give_military_access = TRM }
 		set_country_flag = TRM_MON_friendship
-		hidden_effect = {
-			MON = { 
-				give_military_access = TRM
-				add_opinion_modifier = {
-					target = TRM
-					modifier = KR_close_allies  
-				}
-			}
-		}
 	}
 }
 country_event = { #Mongolia rejects
@@ -9073,46 +9152,26 @@ country_event = { #Buryat-Mongolian independence
 				transfer_technology = yes
 				hidden_effect = {
 					set_politics = {
-						ruling_party = national_populist
+						ruling_party = authoritarian_democrat
 						last_election = "1930.11.9"
 						election_frequency = 48
 						elections_allowed = no
 					}
-
-					set_popularities = {
-						totalist = 0
-						radical_socialist = 0
-						syndicalist = 0
-						social_democrat = 0
-						social_liberal = 0
-						market_liberal = 0
-						social_conservative = 0
-						authoritarian_democrat = 0
-						paternal_autocrat = 41
-						national_populist = 59
+					set_political_party = {
+						ideology = authoritarian_democrat
+						popularity = 30
 					}
 					remove_all_ministers = yes
-					add_ideas = {
-							BRT_Bidia_D_Dandaron_hog_npo 
-							BRT_Bidia_D_Dandaron_for_npo 
-							BRT_Bidia_D_Dandaron_eco_npo 
-							BRT_Bidia_D_Dandaron_sec_npo
+					add_ideas = { #adding soccon ministers
+						BRT_Tsogto_Badmazhapov_hog_sco
+						BRY_DV_Buhogol_for_sco
+						BRT_Choyzil_Lhama_Bazaron_eco_sco
+						BRY_Gombozhap_Tsybikov_sec_sco
 					}
+					remove_buryat_cossack_diarchy = yes
+					remove_burnatskom_ideas = yes
 				}
-				if = {
-					limit = {
-						TRM = { has_country_flag = TRM_MON_friendship }
-					}
-					BRY = { give_military_access = MON }
-					diplomatic_relation = { country = BRY relation = non_aggression_pact }
-					MON = { 
-						give_military_access = BRY
-						add_opinion_modifier = {
-							target = BRY
-							modifier = KR_close_allies  
-						}
-					}
-				}
+				set_cosmetic_tag = BRY_MON
 			}
 		}
 	}
@@ -11518,6 +11577,12 @@ country_event = {
 				type = annex_everything
 			}
 			hidden_effect = {
+				country_event = {
+					id = transbaikalia.30
+					days = 65
+				}
+			}
+			hidden_effect = {
 				BRY = {
 					diplomatic_relation = {
 						country = JAP
@@ -11601,6 +11666,12 @@ country_event = {
 			declare_war_on = {
 				target = BRY
 				type = annex_everything
+			}
+			hidden_effect = {
+				country_event = {
+					id = transbaikalia.30
+					days = 65
+				}
 			}
 			hidden_effect = {
 				BRY = {
@@ -11690,6 +11761,12 @@ country_event = {
 				type = annex_everything
 			}
 			hidden_effect = {
+				country_event = {
+					id = transbaikalia.30
+					days = 65
+				}
+			}
+			hidden_effect = {
 				BRY = {
 					diplomatic_relation = {
 						country = JAP
@@ -11776,18 +11853,24 @@ country_event = {
 				type = annex_everything
 			}
 			hidden_effect = {
+				country_event = {
+					id = transbaikalia.30
+					days = 65
+				}
+			}
+			hidden_effect = {
 				BRY = {
 					diplomatic_relation = {
 						country = JAP
 						relation = non_aggression_pact
-						active = no
+						active = yes
 					}
 				}
 				JAP = {
 					diplomatic_relation = {
 						country = BRY
 						relation = military_access
-						active = no
+						active = yes
 					}
 				}
 			}
@@ -11805,7 +11888,7 @@ country_event = {
 					diplomatic_relation = {
 						country = YAK
 						relation = non_aggression_pact
-						active = no
+						active = yes
 					}
 				}
 			}
@@ -12017,14 +12100,31 @@ country_event = {
 		tag = BRY
 		NOT = { country_exists = TRM }
 		NOT = { country_exists = SIB }
-		has_global_flag = TRM_civil_war		
+		has_global_flag = TRM_civil_war
+		BRY = { 
+			OR = {
+				has_government = paternal_autocrat
+				has_government = totalist
+			}
+		}
 	}
 	mean_time_to_happen = {
 		days = 1
 	}
 	option = {
 		name = tram.302.a
+		trigger = {
+			has_government = paternal_autocrat
+		}
 		setup_cossack_cw_victory = yes
+		TRM = { change_tag_from = ROOT }
+	}
+	option = {
+		name = tram.302.a
+		trigger = {
+			has_government = totalist
+		}
+		setup_atheists_cw_victory = yes
 		TRM = { change_tag_from = ROOT }
 	}
 }
@@ -12377,6 +12477,303 @@ country_event = {
 			}
 			TRM = { add_state_core = PREV }
 		}
+	}
+}
+country_event = {
+	id = tram.310
+	immediate = {
+		hidden_effect = { TRM_setup_the_civil_war_buryat = yes }
+	}
+	title = tram.300.t
+	desc = tram.300.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = tram.300.a
+		if = {
+			limit = {
+				country_exists = YAK
+			}
+			declare_war_on = {
+				target = YAK
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				country_exists = BRY
+			}
+			declare_war_on = {
+				target = BRY
+				type = annex_everything
+			}
+			hidden_effect = {
+				country_event = {
+					id = transbaikalia.30
+					days = 65
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = SIB
+			}
+			declare_war_on = {
+				target = SIB
+				type = annex_everything
+			}
+			hidden_effect = {
+				SIB = {
+					diplomatic_relation = {
+						country = YAK
+						relation = non_aggression_pact
+						active = yes
+					}
+					diplomatic_relation = {
+						country = BRY
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_state = {
+					OR = {
+						state = 408
+						state = 409
+						state = 637
+						state = 562
+					}
+					is_owned_by = JAP
+				}
+			}
+							
+			country_event = {
+				id = tram.301
+				days = 5
+			}
+		}
+	}
+	option = {
+		name = tram.300.b
+		trigger = {
+			is_ai = no
+		}
+		if = {
+			limit = {
+				country_exists = YAK
+			}
+			declare_war_on = {
+				target = YAK
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				country_exists = BRY
+			}
+			declare_war_on = {
+				target = BRY
+				type = annex_everything
+			}
+			hidden_effect = {
+				country_event = {
+					id = transbaikalia.30
+					days = 65
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = SIB
+			}
+			declare_war_on = {
+				target = SIB
+				type = annex_everything
+			}
+			hidden_effect = {
+				SIB = {
+					diplomatic_relation = {
+						country = YAK
+						relation = non_aggression_pact
+						active = yes
+					}
+					diplomatic_relation = {
+						country = BRY
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_state = {
+					OR = {
+						state = 408
+						state = 409
+						state = 637
+						state = 562
+					}
+					is_owned_by = JAP
+				}
+			}
+							
+			country_event = {
+				id = tram.301
+				days = 5
+			}
+		}
+		YAK = { change_tag_from = ROOT }
+		
+	}
+	option = {
+		name = tram.310.c
+		trigger = {
+			country_exists = BRY
+			is_ai = no
+		}
+		if = {
+			limit = {
+				country_exists = YAK
+			}
+			declare_war_on = {
+				target = YAK
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				country_exists = BRY
+			}
+			declare_war_on = {
+				target = BRY
+				type = annex_everything
+			}
+			hidden_effect = {
+				country_event = {
+					id = transbaikalia.30
+					days = 65
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = SIB
+			}
+			declare_war_on = {
+				target = SIB
+				type = annex_everything
+			}
+			hidden_effect = {
+				SIB = {
+					diplomatic_relation = {
+						country = YAK
+						relation = non_aggression_pact
+						active = yes
+					}
+					diplomatic_relation = {
+						country = BRY
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_state = {
+					OR = {
+						state = 408
+						state = 409
+						state = 637
+						state = 562
+					}
+					is_owned_by = JAP
+				}
+			}
+							
+			country_event = {
+				id = tram.301
+				days = 5
+			}
+		}
+		BRY = { change_tag_from = ROOT }
+	}
+	option = {
+		name = tram.300.e
+		trigger = {
+			country_exists = SIB
+			is_ai = no
+		}
+		if = {
+			limit = {
+				country_exists = YAK
+			}
+			declare_war_on = {
+				target = YAK
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				country_exists = BRY
+			}
+			declare_war_on = {
+				target = BRY
+				type = annex_everything
+			}
+			hidden_effect = {
+				country_event = {
+					id = transbaikalia.30
+					days = 65
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = SIB
+			}
+			declare_war_on = {
+				target = SIB
+				type = annex_everything
+			}
+			hidden_effect = {
+				SIB = {
+					diplomatic_relation = {
+						country = YAK
+						relation = non_aggression_pact
+						active = yes
+					}
+					diplomatic_relation = {
+						country = BRY
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_state = {
+					OR = {
+						state = 408
+						state = 409
+						state = 637
+						state = 562
+					}
+					is_owned_by = JAP
+				}
+			}
+							
+			country_event = {
+				id = tram.301
+				days = 5
+			}
+		}
+		SIB = { change_tag_from = ROOT }
 	}
 }
 country_event = {
@@ -12821,6 +13218,33 @@ country_event = { #hidden yakut revolt trigger
 		activate_mission = TRM_yakut_revolt
 		574 = {
 			add_core_of = YAK
+			force_enable_resistance = {
+				occupier = TRM
+			}
+			start_resistance = yes
+			set_resistance = 20
+		}
+	}
+}
+country_event = { #hidden buryat revolt trigger 
+	id = tram.10002
+	title = tram.10000.t 
+	desc = tram.10000.d 
+	hidden = yes
+	trigger = {
+		tag = TRM
+		check_variable = { Buryatia_Kolchak_Authority > Buryatia_Oblastniki_Authority }
+		has_country_flag = TRM_martial_law_in_buryatia
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = tram.10001.a #take off hat 
+		set_country_flag = TRM_visible_decisions_to_crush_buryatia
+		activate_mission = TRM_buryat_revolt
+		564 = {
+			add_core_of = BRY
 			force_enable_resistance = {
 				occupier = TRM
 			}

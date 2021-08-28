@@ -802,8 +802,9 @@ tram.300.t:0 "Chaos in the Far-East!"
 tram.300.d:0 "It seems that the final desires and attempts of Admiral Kolchak to hold together our nation were vain. The Yakuts have proclaimed the Provisional Republic of Yakutia and seceded, and the others followed their example. We have no choice but to fight for our Motherland and turn it back to normal!"
 tram.300.a:0 "Long Live Transamur!"
 tram.300.b:0 "Long Live Yakutia!"
-tram.300.c:0 "Long Live Transbaikal!"
+tram.300.c:0 "Long Live Transbaikalia!"
 tram.300.e:0 "Long Live Siberia!"
+tram.310.c:0 "Long Live [BRY.GetName]!"
 
 tram.301.t:0 "The Japanese Conquer Our Lands!"
 tram.301.d:0 "In the immediate chaos of the Kolchak's fiefdom, the Japanese with the help of Vladivostok Business circles have seized some our territories. The Kwantung Army is now controlling our cities and the Japanese Fleet is guarding our ports. We must decide what to do."
@@ -999,25 +1000,25 @@ trmnra.102.b:0 "We need another month to prepare an invasion."
 trmnra.102.c:0 "We need another half-year to prepare an invasion."
 trmnra.102.e:0 "We need another year to prepare an invasion."
 
-
 tramsem.1.t:0 "Ataman Semyenov"
-tramsem.1.d:0 "Ataman Semyenov, the leader of Transbaikal Cossacks, had not recognized Kolchak's government during the Civil War. After the foundation of Transamur, he was eager to join us, bringing the whole Transbaikal region under our jurisdiction. However, there are rumours that Semyenov is coordinated by Japan, and Kolchak is worried that Semyenov can revolt with the help of Japanese. Something should be done."
-tramsem.1.a:0 "Try to bring him over."
-tramsem.1.b:0 "Talk to the Japanese."
+tramsem.1.d:0 "Ataman Semenov, the leader of the Transbaikal Cossacks, did not recognize the Kolchak government during the Civil War. After the founding of Transamur, he really wanted to join us, subjecting the entire Transbaikalia region to our jurisdiction. In the conditions of an actual civil war in the region, we can give Transbaikalia under the full control of Semenov. Temporarily, until he puts things in order there. We can be sure that Semenov will cope with the suppression of the troubles in Transbaikalia. However, there are rumors that Semyonov is coordinated by Japan, and Kolchak is concerned that Semyonov may rebel with the help of the Japanese. Something has to be done."
+tramsem.1.a:0 "That's the best we can do now."
+tramsem.1.b:0 "Don't do anything before we talk to the Japanese."
 tramsem.1.c:0 "Do nothing."
 
 tramsem.2.t:0 "Who is Semyenov?"
 tramsem.2.d:0 "The Japanese Delegation insists that they do not support any Cossack Hosts in the territory of Transamur and recognize the supreme power of our government. It seems that nothing can be done..."
-tramsem.2.a:0 "Well..."
+tramsem.2.a:0 "Well... let's do this, then."
+tramsem.2.b:0 "That is definetely a bad idea."
 
-tramsem.3.t:0 "Semyenov's Demands"
-tramsem.3.d:0 "Ataman Semyenov sent a Cossack delegation to Vladivostok with several demands. He guarantees that he will definetely support our government in any case, if the Transbaikal Cossack have neough autonomy and power to rule in Chita and Blagoveschensk. Moreover, he demands that Buryats are granted wide autonomy. While this decision can win a lot of support towards our government from Oblastniki and Japanese Delegation and even some Transamurian citizens, the others can become very unsatisfied."
-tramsem.3.a:0 "Give in to his demands."
-tramsem.3.b:0 "It's just ridiculous."
+tramsem.3.t:0 "Transbaikal Cossack Host"
+tramsem.3.d:0 "Today, an emergency decree of the supreme ruler on the establishment of the Trans-Baikal Military District under the jurisdiction of the Trans-Baikal Cossack Army of Ataman Semenov entered into legal force. The district includes the territories of Verkhneudinsk and Chita and adjacent territories, in which a state of emergency and martial law is being introduced to combat the partisanship of the NRA."
+tramsem.3.a:0 "Hope he will deal with it soon."
+tramsem.3.b:0 "Time to deal with turmoil! (Play as Transbaikalia)"
 
-tramsem.4.t:0 "Semyenov Coups the Government."
-tramsem.4.d:0 "Today, Admiral Kolchak was arrested in his residency on the outskirts of Vladivostok. Several people, dressed as Cossacks, demanded the Supreme Leader of Russia to surrender. Kolchak was taken by surprise and was totally unprepared for resistance. His own bodyguards rejected to help him after the Cossack showed the official document. Later, Kolchak was got to the military airfield in Vladivostok, when sentence of death was passed upon him. The sentence was executed immediately. Meanwhile, ataman Semyenov has announced death of Admiral Kolchak and took the mantle of the Supreme Leader of Russia."
-tramsem.4.a:0 "We thought it would be harder..." 
+tramsem.4.t:0 "Turmoil in Transbaikalia"
+tramsem.4.d:0 "The Trans-Baikal region is a springboard for constant resistance to the Kolchak regime. On the one hand, the region is home to the Buryat-Mongolian minority - the Buddhist people living here. During the civil war, the Buryat-Mongolian state existed for some time as an independent state. With the annexation of Transbaikalia to Transamur, the activities of the local Buryat-Mongolian self-government were suspended, but power in the region was still concentrated in the hands of civilian Siberian regionalists.\n\nIn addition to the Buryat Mongols and local regionalists, the lands of the Trans-Baikal Cossack army of Semenov are located in Transbaikalia and the NRA partisans are most concentrated. In fact, the region is in a state of civil war, and we need to decide what to do."
+tramsem.4.a:0 "We should deal with the situation."
 
 tramsem.5.t:0 "Support Oblastniki"
 tramsem.5.d:0 "Ataman Semyenov has close relations with Buryat people. We can gain the support of the Oblastniki if we promise to give them autonomy. And Ataman Semyenov always keeps his promises."
@@ -1677,6 +1678,8 @@ TRM_seek_for_blue_clay_tt:0 "A special expedition to seek the precious §CBlue C
 TRM_increase_border_control_with_Russia:0 "Increase Border Control with Russia"
 TRM_buryat_kurultai:0 "Organise an All-Buryat Kurultai"
 TRM_buryat_martial_law:0 "Invoke Martial Law in [564.GetName]"
+TRM_revoke_buryat_martial_law:0 "Revoke Martial Law in [564.GetName]"
+TRM_send_division_to_buryatia:0 "Send Divisions To [564.GetName]"
 TRM_yakut_munnah:0 "Organise an All-Yakut Munn'ah"
 TRM_yakutia_martial_law:0 "Invoke Martial Law in [574.GetName]"
 TRM_revoke_yakutia_martial_law:0 "Revoke Martial Law in [574.GetName]"
@@ -1696,7 +1699,7 @@ TRM_Self_Government_Minorities_tt:0 "Completing this focus will unlock £decisio
 TRM_Martial_Law_In_Minority_Areas_tt:0 "Completing this focus will unlock £decision_icon_small Decisions to §Gincrease§! §XKolchak§! authority in [574.GetName] and [564.GetName]\n"
 TRM_Japanese_Arms_tt:0 "Completing this focus will activate monthly shipments of §gJapanese§! equipment to §YVladivostok§!\n"
 TRM_buryat_kurultai_tt:0 "Holding the All-Buryat Kurultai will §Gincrease§! Buryats' opinion of §XKolchak§! and §Gdecrease§! £resistance_texticon §OOblastniki§! resistance, but at the same time §Gdecrease§! Buryat separatism."
-TRM_buryat_martial_law_tt:0 "Invoking the Martial Law in [564.GetName] will §Rdecrease§! Buryats' opinion of §XKolchak§! and §Gincrease§! £resistance_texticon §OOblastniki§! resistance, but at the same time §Rincrease§! Buryat separatism."
+TRM_buryat_martial_law_tt:0 "Invoking the Martial Law in [564.GetName] will §Rdecrease§! Buryats' opinion of §XKolchak§! and §Gincrease§! £resistance_texticon §OOblastniki§! resistance, but at the same time greatky §Rincrease§! Buryat separatism, leading to a possible revolt."
 TRM_yakut_munnah_tt:0 "Holding the All-Yakut Munn'ah will §Gincrease§! Yakuts' opinion of §XKolchak§! and §Gdecrease§! £resistance_texticon §OOblastniki§! resistance, but at the same time §Gdecrese§! Yakut separatism."
 TRM_yakut_martial_law_tt:0 "Invoking the Martial Law in [574.GetName] will §Rdecrease§! Yakuts' opinion of §XKolchak§! and §Gincrease§! £resistance_texticon §OOblastniki§! resistance, but at the same greatly §Rincrease§! Yakut separatism, leading to a possible revolt."
 TRM_Diterikhs_Will_Deal_With_NRA_tt:0 "The success of operations against §RNRA§! will be §Gincreased§! in [561.GetName], [560.GetName] and [657.GetName]"
@@ -1705,6 +1708,7 @@ Infiltrate_NRA_will_show_when_you_activate_it:0 "§MThe effects of this operatio
 NRA_mission_fails:0 "The NRA failing in its sabotage..."
 
 TRM_yakut_revolt:0 "Yakut Separatist Rebellion"
+TRM_buryat_revolt:0 "Buryat-Mongolian Separatist Rebellion"
 
 TRM_NRA_crushed:0 "NRA Seized to Exist"
 TRM_already_exercising:0 "Already having joint exercises"
@@ -2328,6 +2332,9 @@ TRM_mlad_vicrory:0"§RThe Will of the Workers and the People's Tsar have Triumph
 Aleksandr_Kolchak_escaped:0 "Alexsandr Kolchak has escaped!"
 TRM_relations_JAP_broke:0 "We have cut our ties with Japan"
 TRM_oblastniki_banned:0 "We have put down the Oblastniki resistance"
+
+TRM_transbaikal_tooltip:0 "We will establish £KR_game_rule_flag_TRM_SEM §YTransbaikal Military District§! in §Y[563.GetName]§! and §Y[564.GetName]§!.\n§CGrigoriy Semyenov§!, §CIvan Gamov§!, §CVladimir Tolstov§!, §CLeonid Skipetrov§!, §CDmitriy Semyenov§! will become unavailable as generals.\nWe won't be able to interact with §Y[563.GetName]§! and §Y[564.GetName]§!\n\n§RThe success of the martial law under Cossacks is not guaranteed. With high possibility they will try to break free. Moreover, the Military disctrict can fail and other political organisation can rise to power there.§!"
+
 
 ### Flags ###
 TRM_control_FE:0 "The Russian Far East is ours"
