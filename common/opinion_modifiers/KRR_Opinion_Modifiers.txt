@@ -11,13 +11,38 @@
 opinion_modifiers = {
 
 	### Russia
+	RUS_royal_wedding = {
+		value = 15
+	}
+	SOV_promoting_internationalism = {
+		value = 30
+		days = 30
+	}	
+	YAK_opened_embassy = {
+		value = 75
+	}
+	BRY_panmongolism = {
+		value = 75
+	}
+	FNG_TRM_CUR1 = {
+		value = 10
+		trade = yes
+	}
+	FNG_TRM_CUR2 = {
+		value = -10
+	}
+	TRM_FNG_DIP = {
+		value = 60
+	}
 	SOV_INT = {
 		value = 100
 	}
 	SOV_AUT = {
 		value = -100
 	}
-	
+	RUS_returned_payments = {
+		value = 15
+	}
 	MTR_import_tarrifs = {
 		value = -50
 		trade = yes

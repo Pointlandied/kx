@@ -835,11 +835,51 @@ spriteTypes = {
 		texturefile = "gfx/interface/ministers/RUS/RUS_Nikolay_V_Nekrasov.png"
 	}
 	spriteType = {
+		name = "GFX_idea_RUS_Nikolay_V_Nekrasov_hog_sli"
+		texturefile = "gfx/interface/ministers/RUS/RUS_Nikolay_V_Nekrasov.png"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_Nikolay_I_Ivanov_eco_rso"
+		texturefile = "gfx/interface/ministers/RUS/RUS_Nikolay_I_Ivanov.png"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_Kost_S_Burevoy_sec_rso"
+		texturefile = "gfx/interface/ministers/RUS/RUS_Kost_S_Burevoy.png"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_Aleksandr_N_Potresov_hog_sde"
+		texturefile = "gfx/interface/ministers/RUS/RUS_Aleksandr_N_Potresov.png"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_Vladimir_K_Volsky_hog_rso"
+		texturefile = "gfx/interface/ministers/RUS/RUS_Vladimir_K_Volsky.png"
+	}
+	spriteType = {
 		name = "GFX_idea_RUS_Pyetr_B_Struve_for_sli"
 		texturefile = "gfx/interface/ministers/RUS/RUS_Pyetr_B_Struve.png"
 	}
 	spriteType = {
 		name = "GFX_idea_RUS_Aleksandr_I_Konovalov_for_mli"
+		texturefile = "gfx/interface/ministers/RUS/RUS_Aleksandr_I_Konovalov.png"
+	}
+	spriteType = {
+		name = "GFX_idea_TRM_Anastasiy_Vonsyatsky_hog_npo"
+		texturefile = "gfx/interface/ministers/TRM/TRM_Anastasiy_Vonsyatsky.png"
+	}
+	spriteType = {
+		name = "GFX_idea_TRM_Arseniy_Nesmelov_for_npo"
+		texturefile = "gfx/interface/ministers/TRM/TRM_Arseniy_Nesmelov.png"
+	}
+	spriteType = {
+		name = "GFX_idea_TRM_Lev_Okhotin_eco_npo"
+		texturefile = "gfx/interface/ministers/TRM/TRM_Lev_Okhotin.png"
+	}
+	spriteType = {
+		name = "GFX_idea_TRM_Mikhail_Matkovsky_sec_npo"
+		texturefile = "gfx/interface/ministers/TRM/TRM_Mikhail_Matkovsky.png"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_Aleksandr_I_Konovalov_hog_mli"
 		texturefile = "gfx/interface/ministers/RUS/RUS_Aleksandr_I_Konovalov.png"
 	}
 	spriteType = {

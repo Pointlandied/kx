@@ -458,6 +458,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/TRM/TRM_kolchak_loyalists.png"
 	}
 	spriteType = {
+		name = "GFX_idea_TRM_Liberation"
+		texturefile = "gfx/interface/ideas/TRM/TRM_Liberation.png"
+	}
+	spriteType = {
+		name = "GFX_idea_TRM_Vozhd"
+		texturefile = "gfx/interface/ideas/TRM/TRM_Vozhd.png"
+	}
+	spriteType = {
+		name = "GFX_idea_TRM_nazi_tsardom"
+		texturefile = "gfx/interface/ideas/TRM/TRM_nazi_tsardom.png"
+	}
+	spriteType = {
 		name = "GFX_idea_TRM_semyenov_loyalists"
 		texturefile = "gfx/interface/ideas/TRM/TRM_semyenov_loyalists.png"
 	}
@@ -502,8 +514,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/RUS/BRY_diarchy_equal.png"
 	}
 	spriteType = {
-		name = "GFX_idea_BRY_diarchy_Òossack"
-		texturefile = "gfx/interface/ideas/RUS/BRY_diarchy_Òossack.png"
+		name = "GFX_idea_BRY_diarchy_—Åossack"
+		texturefile = "gfx/interface/ideas/RUS/BRY_diarchy_—Åossack.png"
 	}
 	spriteType = {
 		name = "GFX_idea_BRY_Militant_Atheists_Resistance_idea"
@@ -552,6 +564,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_BRY_soviet"
 		texturefile = "gfx/interface/ideas/RUS/BRY_soviet.png"
+	}
+	spriteType = {
+		name = "GFX_idea_RUS_RRF_idea"
+		texturefile = "gfx/interface/ideas/RUS/RUS_RRF_idea.png"
 	}
 		
 }

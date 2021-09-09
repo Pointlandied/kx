@@ -3575,6 +3575,9 @@ TRM_japanese_influence = {
 		}
 	}
 	
+
+	
+
 	TRM_hold_vladivostok = {
 		icon = generic_tank
 
@@ -5215,7 +5218,7 @@ TRM_Mlad_cat = {
 		available = {
 			country_exists = RUS
 			RUS = {
-				has_country_flag = RUS_monarchy_restored
+				RUS_russian_monarch = yes
 			}
 			NOT = { has_country_flag = TRM_already_denouncing_nation }
 			has_completed_focus = TRM_modern_bog
@@ -5357,5 +5360,4 @@ TRM_Mlad_cat = {
 		}
 	}
 }
-
 

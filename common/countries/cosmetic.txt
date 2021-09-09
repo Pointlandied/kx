@@ -136,6 +136,14 @@ RUS_vozhdct = {
 	color = rgb { 0 62 7 }
 	color_ui = rgb { 0 62 7 }
 }
+TRM_nats = {
+	color = rgb { 0 62 7 }
+	color_ui = rgb { 0 62 7 }
+}
+TRM_nats_empire = {
+	color = rgb { 0 62 7 }
+	color_ui = rgb { 0 62 7 }
+}
 DKB_RUS = {
 	color = rgb { 0 127 14 }
 	color_ui = rgb { 0 127 14 }
