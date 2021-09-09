@@ -250,17 +250,17 @@ COG_congo_collapse = {
 					has_government = social_democrat
 					has_idea = COG_Leonard_Mpoyi_hog_sde
 				}
-				remove_idea = COG_Leonard_Mpoyi_hog_sde
-				add_idea = COG_Daniel_Kanza_hog_sde
+				remove_ideas = COG_Leonard_Mpoyi_hog_sde
+				add_ideas = COG_Daniel_Kanza_hog_sde
 			}
 			complete_national_focus = COG_tewapen
 			mark_focus_tree_layout_dirty = yes
 			add_ideas = COG_lack_of_resources
 			add_ideas = COG_reliance_on_mercs_idea
-			remove_idea = COG_German_Influence
-			remove_idea = COG_german_influence_rising
-			remove_idea = COG_belgian_influence_rising
-			remove_idea = COG_german_economic_influence_rising
+			remove_ideas = COG_German_Influence
+			remove_ideas = COG_german_influence_rising
+			remove_ideas = COG_belgian_influence_rising
+			remove_ideas = COG_german_economic_influence_rising
 			every_unit_leader = {
 				limit = { 
 					OR = { 
@@ -302,6 +302,18 @@ COG_congo_collapse = {
 					set_nationality = LPD
 				}
 			}
+		}
+		KIV = {
+			transfer_technology_without_doctrines = yes
+		}
+		LPD = {
+			transfer_technology_without_doctrines = yes
+		}
+		UMN = {
+			transfer_technology_without_doctrines = yes
+		}
+		MSF = {
+			transfer_technology_without_doctrines = yes
 		}
 		set_global_flag = COG_is_in_civil_war
 }
@@ -784,6 +796,34 @@ KIV_decrease_simba_revolt = {
 	}
 }
 
+KIV_decrease_inexperience = {
+	if = {
+		limit = { has_idea = KIV_inexperience2 }
+		swap_ideas = {
+			remove_idea = KIV_inexperience2
+			add_idea = KIV_inexperience2_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = KIV_inexperience2_1 }
+		swap_ideas = {
+			remove_idea = KIV_inexperience2_1
+			add_idea = KIV_inexperience2_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = KIV_inexperience2_2 }
+		swap_ideas = {
+			remove_idea = KIV_inexperience2_2
+			add_idea = KIV_inexperience2_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = KIV_inexperience2_3 }
+		remove_ideas = KIV_inexperience2_3
+	}
+}
+
 UMN_decrease_resistance = {
 	custom_effect_tooltip = KIV_decrease_resistance_tt
 	hidden_effect = {
@@ -1107,7 +1147,7 @@ fuck_the_shit_out_of_the_congo = {
 		remove_ideas = COG_Belgian_Engineers
 		remove_ideas = COG_African_Engineers
 		remove_ideas = COG_Military_Academy
-		remove_ideas = COG_Defense_Of_Katanga
+		remove_ideas = COG_Defense_of_the_Congo
 		remove_ideas = COG_Desertion_Crisis
 		remove_ideas = COG_European_Army
 		remove_ideas = COG_African_Army

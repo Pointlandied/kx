@@ -10564,6 +10564,10 @@ country_event = { #Finland seizes Karelia
 	desc = rusd.31.d
 	fire_only_once = yes
 	is_triggered_only = yes
+	trigger = {
+		tag = FIN
+		SOV = { NOT = { has_country_flag = SOV_restored_in_transamur } }
+	}
 	option = {
 		name = rusd.31.a
 		ai_chance = {
@@ -10978,10 +10982,26 @@ country_event = { #The Patriarch's Demands
 	option = {
 		name = orth.3.a
 		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.1
+		set_cosmetic_tag = RUS_TSAR_CLE
+	}
+	option = {
+		name = orth.3.b
+		ai_chance = {
 			factor = 60
 		}
 		add_stability = -0.1
 		set_cosmetic_tag = RUS_TSAR_CLE
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Sergius"
+			picture = "Portrait_RUS_Sergius_Stragorodsky.png"
+			expire = "1965.1.1"
+			ideology = paternal_autocrat_subtype
+			traits = {}
+		}			
 	}
 }
 
@@ -28882,7 +28902,18 @@ country_event = { #Transfer of the territory
 country_event = { #We've been defeated! FIN
 	id = rusfor.1232
 	immediate = { log = "[GetDateText]: [Root.GetName]: event rusfor.1232" }
-	title = rusfor.1232.t
+	title = {
+		text = rusfor.1232.t.victory
+		trigger = {
+			NOT = { surrender_progress > 0.2 }	
+		}
+	}
+	title = {
+		text = rusfor.1232.defeat
+		trigger = {
+			surrender_progress > 0.2	
+		}
+	}
 	desc = {
 		text = rusfor.1232.d.defeat
 		trigger = { surrender_progress > 0.2 }
@@ -32912,6 +32943,7 @@ country_event = { # Fate of Turkestan
 			OR = {
 				has_completed_focus = RUS_Expansionism
 				tag = SOV
+				has_socialist_government = yes
 			}
 		}
 		if = {
@@ -33853,7 +33885,7 @@ news_event = { #Wrangel makes himself Tsar
 	immediate = { log = "[GetDateText]: [Root.GetName]: event russianews.4" }
 	title = russianews.4.t
 	desc = russianews.4.d
-	picture = GFX_rus_black_tsar_event
+	picture = GFX_news_event_RUS_tsar_wrangel
 
 	major = yes
 

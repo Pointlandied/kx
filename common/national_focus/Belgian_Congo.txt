@@ -1621,6 +1621,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus COG_Found_Military_Academy_Herminestadt"
+			add_research_slot = 1
 			add_ideas = COG_Military_Academy
 		}
 	}
@@ -1762,6 +1763,7 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus COG_Learn_From_East_Africa_Offensive"
+			add_research_slot = 1
 			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 1
@@ -2615,7 +2617,7 @@ focus_tree = {
 			NOT = {
 				has_global_flag = CONGO_SHITSHOW
 				tag = KIV
-				tag = KSV
+				tag = MSF
 				tag = UMN
 				tag = LPD
 			}
@@ -3676,6 +3678,7 @@ focus_tree = {
 					days = 10
 				}
 			}
+			COG_increase_recovery = yes
 		}
 	}
 	
@@ -3990,7 +3993,7 @@ focus_tree = {
 			has_country_flag = COG_monarchy_restored
 		}
 		prerequisite = {
-			focus = COG_belgium_is_thing
+			focus = COG_belgium_not_is_thing
 		}
 	
 		cost = 7
