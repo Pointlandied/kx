@@ -23,6 +23,7 @@ RUS_wrangel_tsar_in_power = {
 		name = "Pyotr IV"
 		ruling_only = yes
 	}
+	has_completed_focus = RUS_Black_Tsar
 }
 
 RUS_kornilov_in_power = {
